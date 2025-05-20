@@ -1,0 +1,177 @@
+@import './variables.less';
+@import './reset.less';
+
+// 全局通用类
+.glass-card {
+  background: @glass-background;
+  backdrop-filter: @glass-backdrop-filter;
+  -webkit-backdrop-filter: @glass-backdrop-filter;
+  border: @glass-border;
+  border-radius: @border-radius-base;
+  box-shadow: @glass-shadow;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, @primary-color, @secondary-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow {
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: inherit;
+    filter: blur(20px);
+    opacity: 0.5;
+    background: inherit;
+    transition: opacity @transition-base;
+  }
+  
+  &:hover::after {
+    opacity: 0.7;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  padding: @spacing-small @spacing-base;
+  border-radius: @border-radius-small;
+  font-weight: 600;
+  transition: all @transition-base;
+  
+  &-primary {
+    background-color: @primary-color;
+    color: white;
+    
+    &:hover {
+      background-color: lighten(@primary-color, 5%);
+      transform: translateY(-2px);
+    }
+  }
+  
+  &-secondary {
+    background-color: @secondary-color;
+    color: @background-color;
+    
+    &:hover {
+      background-color: lighten(@secondary-color, 5%);
+      transform: translateY(-2px);
+    }
+  }
+  
+  &-outline {
+    border: 1px solid @border-color;
+    
+    &:hover {
+      border-color: @text-secondary;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 @spacing-medium;
+}
+
+// 页面过渡动画
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+// 响应式设计
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 540px;
+    padding: 0 @spacing-base;
+  }
+}
+
+/* 简易图标系统 */
+[class^="icon-"], [class*=" icon-"] {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: inline-block;
+}
+
+.icon-mic:before { content: '🎤'; }
+.icon-image:before { content: '🖼️'; }
+.icon-layers:before { content: '📊'; }
+.icon-connection:before { content: '🔄'; }
+.icon-atom:before { content: '⚛️'; }
+.icon-function:before { content: '∫'; }
+.icon-beaker:before { content: '🧪'; }
+.icon-leaf:before { content: '🍃'; }
+.icon-globe:before { content: '🌎'; }
+.icon-chip:before { content: '🖥️'; }
+.icon-experiment:before { content: '🔬'; }
+.icon-book:before { content: '📚'; }
+.icon-video:before { content: '🎬'; }
+.icon-ai:before { content: '🤖'; }
+.icon-refresh:before { content: '🔄'; }
+.icon-brain:before { content: '🧠'; }
+.icon-bulb:before { content: '💡'; }
+.icon-map:before { content: '🗺️'; }
+.icon-star-filled:before { content: '★'; }
+.icon-star-outline:before { content: '☆'; }
+.icon-upload:before { content: '📤'; } 

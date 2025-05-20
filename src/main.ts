@@ -1,4 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router'
+import pinia from './store'
+import 'animate.css'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(router)
+app.use(pinia)
+app.mount('#app')
