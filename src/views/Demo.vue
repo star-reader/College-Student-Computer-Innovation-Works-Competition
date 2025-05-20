@@ -80,7 +80,7 @@ const demoModules = [
 
 // 导航栏样式
 .demo-nav {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
@@ -88,6 +88,7 @@ const demoModules = [
   right: 0;
   z-index: 100;
   padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   
   .container {
     display: flex;
@@ -111,6 +112,7 @@ const demoModules = [
     span {
       font-weight: 600;
       font-size: 16px;
+      color: @text-primary;
     }
   }
   
@@ -133,12 +135,12 @@ const demoModules = [
       }
       
       &:hover {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(0, 0, 0, 0.05);
         color: @text-primary;
       }
       
       &.active {
-        background: rgba(67, 84, 255, 0.15);
+        background: rgba(30, 144, 255, 0.15);
         color: @primary-color;
       }
     }
@@ -148,15 +150,16 @@ const demoModules = [
 // 主内容区样式
 .demo-content {
   flex: 1;
-  margin-top: 62px;
+  margin-top: 80px;
   padding: 20px 0 40px;
 }
 
 // 底部样式
 .demo-footer {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.8);
   padding: 15px 0;
   text-align: center;
+  border-top: 1px solid @border-color;
   
   p {
     font-size: 14px;

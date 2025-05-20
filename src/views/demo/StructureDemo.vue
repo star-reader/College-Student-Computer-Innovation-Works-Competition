@@ -243,16 +243,17 @@ const clearContent = () => {
 
 // 演示卡片
 .demo-card {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
   overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   
   .card-header {
     padding: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     
     .badge {
       display: inline-block;
-      background: rgba(255, 100, 146, 0.2);
+      background: rgba(0, 120, 215, 0.15);
       color: @accent-color;
       font-size: 12px;
       font-weight: 600;
@@ -264,6 +265,7 @@ const clearContent = () => {
     h2 {
       font-size: 22px;
       font-weight: 600;
+      color: @text-primary;
     }
   }
   
@@ -286,13 +288,14 @@ const clearContent = () => {
     font-size: 16px;
     margin-bottom: 12px;
     font-weight: 600;
+    color: @text-primary;
   }
   
   textarea {
     width: 100%;
     height: 400px;
-    background: rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 15px;
     color: @text-primary;
@@ -301,7 +304,7 @@ const clearContent = () => {
     
     &:focus {
       outline: none;
-      border-color: rgba(255, 100, 146, 0.3);
+      border-color: rgba(0, 120, 215, 0.3);
     }
     
     &::placeholder {
@@ -367,13 +370,15 @@ const clearContent = () => {
     font-size: 16px;
     margin-bottom: 12px;
     font-weight: 600;
+    color: @text-primary;
   }
   
   .output-content {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.03);
     border-radius: 8px;
     height: 400px;
     overflow-y: auto;
+    border: 1px solid rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -382,8 +387,8 @@ const clearContent = () => {
   padding: 20px;
   
   .main-topic {
-    background: rgba(255, 100, 146, 0.2);
-    border: 1px solid rgba(255, 100, 146, 0.3);
+    background: rgba(0, 120, 215, 0.1);
+    border: 1px solid rgba(0, 120, 215, 0.2);
     color: @accent-color;
     font-weight: 600;
     padding: 12px;
@@ -399,7 +404,7 @@ const clearContent = () => {
       left: 50%;
       width: 2px;
       height: 15px;
-      background: rgba(255, 100, 146, 0.3);
+      background: rgba(0, 120, 215, 0.2);
     }
   }
   
@@ -491,18 +496,20 @@ const clearContent = () => {
 
 // AI 建议面板
 .ai-panel {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
   animation: slide-up 0.5s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   
   .panel-header {
     padding: 15px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     
     .panel-title {
       display: flex;
       align-items: center;
       gap: 10px;
       font-weight: 600;
+      color: @text-primary;
       
       i {
         color: @accent-color;

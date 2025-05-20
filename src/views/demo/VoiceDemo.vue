@@ -283,18 +283,19 @@ watch(transcription, () => {
 
 // 课堂场景容器
 .scene-container {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
   position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   
   .scene-header {
     padding: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     gap: 15px;
     
     .badge {
-      background: rgba(67, 84, 255, 0.2);
+      background: rgba(30, 144, 255, 0.15);
       color: @primary-color;
       font-size: 12px;
       font-weight: 600;
@@ -305,6 +306,7 @@ watch(transcription, () => {
     .scene-title {
       font-weight: 600;
       font-size: 18px;
+      color: @text-primary;
     }
   }
 }
@@ -466,11 +468,12 @@ watch(transcription, () => {
 
 // 转写区域
 .transcription-area {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.03);
   border-radius: 10px;
   padding: 15px;
   height: 300px;
   overflow-y: auto;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   
   .transcription-content {
     p {
@@ -478,19 +481,20 @@ watch(transcription, () => {
       line-height: 1.6;
       padding: 8px;
       border-radius: 6px;
+      color: @text-primary;
       
       &.highlight {
-        background: rgba(255, 100, 146, 0.1);
-        border-left: 3px solid @accent-color;
+        background: rgba(244, 67, 54, 0.08);
+        border-left: 3px solid @error-color;
       }
       
       &.concept {
-        background: rgba(67, 84, 255, 0.1);
+        background: rgba(30, 144, 255, 0.08);
         border-left: 3px solid @primary-color;
       }
       
       &.example {
-        background: rgba(76, 217, 100, 0.1);
+        background: rgba(0, 200, 83, 0.08);
         border-left: 3px solid @success-color;
       }
       
@@ -503,7 +507,7 @@ watch(transcription, () => {
         font-weight: 600;
         
         .highlight & {
-          background: @accent-color;
+          background: @error-color;
           color: white;
         }
         
@@ -532,12 +536,13 @@ watch(transcription, () => {
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.05);
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 15px;
       font-size: 24px;
+      color: @text-secondary;
     }
   }
 }
@@ -589,12 +594,13 @@ watch(transcription, () => {
 
 // AI分析面板
 .analysis-panel {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
   animation: slide-up 0.5s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   
   .panel-header {
     padding: 15px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -604,6 +610,7 @@ watch(transcription, () => {
       align-items: center;
       gap: 10px;
       font-weight: 600;
+      color: @text-primary;
       
       i {
         color: @secondary-color;
@@ -614,7 +621,7 @@ watch(transcription, () => {
       width: 30px;
       height: 30px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.05);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -622,7 +629,7 @@ watch(transcription, () => {
       transition: all 0.3s;
       
       &:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.1);
         transform: rotate(45deg);
       }
     }
@@ -655,7 +662,7 @@ watch(transcription, () => {
   gap: 10px;
   
   .chip {
-    background: rgba(67, 84, 255, 0.15);
+    background: rgba(30, 144, 255, 0.1);
     color: @primary-color;
     padding: 6px 12px;
     border-radius: 20px;
@@ -669,6 +676,7 @@ watch(transcription, () => {
     margin-bottom: 8px;
     padding-left: 20px;
     position: relative;
+    color: @text-primary;
     
     &::before {
       content: '';

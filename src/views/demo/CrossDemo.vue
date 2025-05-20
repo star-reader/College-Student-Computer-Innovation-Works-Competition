@@ -473,17 +473,18 @@ const generatePathSuggestions = () => {
 
 // 演示卡片
 .demo-card {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
   overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   
   .card-header {
     padding: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     
     .badge {
       display: inline-block;
-      background: rgba(131, 77, 155, 0.2);
-      color: #834d9b;
+      background: rgba(0, 120, 215, 0.15);
+      color: #0078d7;
       font-size: 12px;
       font-weight: 600;
       padding: 4px 10px;
@@ -494,6 +495,7 @@ const generatePathSuggestions = () => {
     h2 {
       font-size: 22px;
       font-weight: 600;
+      color: @text-primary;
     }
   }
   
@@ -516,6 +518,7 @@ const generatePathSuggestions = () => {
     font-size: 16px;
     margin-bottom: 15px;
     font-weight: 600;
+    color: @text-primary;
   }
   
   .courses-grid {
@@ -526,8 +529,8 @@ const generatePathSuggestions = () => {
   }
   
   .course-card {
-    background: rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     padding: 12px;
     display: flex;
@@ -538,13 +541,13 @@ const generatePathSuggestions = () => {
     position: relative;
     
     &:hover {
-      background: rgba(0, 0, 0, 0.15);
+      background: rgba(0, 0, 0, 0.05);
       transform: translateY(-2px);
     }
     
     &.selected {
-      background: rgba(131, 77, 155, 0.1);
-      border-color: rgba(131, 77, 155, 0.3);
+      background: rgba(0, 120, 215, 0.08);
+      border-color: rgba(0, 120, 215, 0.2);
       
       .select-indicator {
         position: absolute;
@@ -552,7 +555,7 @@ const generatePathSuggestions = () => {
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        background: #834d9b;
+        background: #0078d7;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -641,13 +644,15 @@ const generatePathSuggestions = () => {
     font-size: 16px;
     margin-bottom: 15px;
     font-weight: 600;
+    color: @text-primary;
   }
   
   .visualization-area {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.03);
     border-radius: 8px;
     min-height: 400px;
     overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     
     .placeholder-content, .loading-content {
       height: 400px;
@@ -820,21 +825,23 @@ const generatePathSuggestions = () => {
 
 // 路径建议面板
 .path-panel {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
   animation: slide-up 0.5s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   
   .panel-header {
     padding: 15px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     
     .panel-title {
       display: flex;
       align-items: center;
       gap: 10px;
       font-weight: 600;
+      color: @text-primary;
       
       i {
-        color: #834d9b;
+        color: #0078d7;
       }
     }
   }

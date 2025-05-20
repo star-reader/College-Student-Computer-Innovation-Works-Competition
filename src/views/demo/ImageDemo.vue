@@ -481,17 +481,18 @@ const clearHighlight = () => {
 
 // 场景容器样式
 .scene-container {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   
   .scene-header {
     padding: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     gap: 15px;
     
     .badge {
-      background: rgba(92, 215, 201, 0.2);
+      background: rgba(0, 188, 212, 0.15);
       color: @secondary-color;
       font-size: 12px;
       font-weight: 600;
@@ -502,6 +503,7 @@ const clearHighlight = () => {
     .scene-title {
       font-weight: 600;
       font-size: 18px;
+      color: @text-primary;
     }
   }
 }
@@ -621,7 +623,8 @@ const clearHighlight = () => {
     border-radius: 8px;
     overflow: hidden;
     min-height: 200px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     
     img {
       width: 100%;
@@ -744,12 +747,13 @@ const clearHighlight = () => {
       font-size: 16px;
       font-weight: 600;
       margin-bottom: 12px;
+      color: @text-primary;
     }
     
     .result-tabs {
       display: flex;
       gap: 8px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       padding-bottom: 8px;
       
       .tab-btn {
@@ -763,11 +767,11 @@ const clearHighlight = () => {
         
         &:hover {
           color: @text-primary;
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(0, 0, 0, 0.05);
         }
         
         &.active {
-          background: rgba(92, 215, 201, 0.1);
+          background: rgba(0, 188, 212, 0.1);
           color: @secondary-color;
         }
       }
@@ -777,10 +781,11 @@ const clearHighlight = () => {
   .results-content {
     flex: 1;
     overflow-y: auto;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.03);
     border-radius: 8px;
     padding: 15px;
     height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     
     .results-loading, .results-placeholder {
       height: 100%;
@@ -933,18 +938,20 @@ const clearHighlight = () => {
 
 // AI 洞见面板
 .insights-panel {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
   animation: slide-up 0.5s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   
   .panel-header {
     padding: 15px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     
     .panel-title {
       display: flex;
       align-items: center;
       gap: 10px;
       font-weight: 600;
+      color: @text-primary;
       
       i {
         color: @accent-color;

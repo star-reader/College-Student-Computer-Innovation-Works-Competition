@@ -129,7 +129,7 @@
     right: 0;
     bottom: 0;
     background: @background-color url('../assets/images/stars-bg.svg') repeat;
-    opacity: 0.3;
+    opacity: 0.1;
   }
 }
 
@@ -155,6 +155,7 @@
     font-weight: 900;
     margin-bottom: 24px;
     line-height: 1.1;
+    color: @text-primary;
     
     @media (max-width: 768px) {
       font-size: 48px;
@@ -172,7 +173,7 @@
     line-height: 1.5;
     
     .highlight {
-      color: @text-primary;
+      color: @primary-color;
       font-weight: 700;
     }
   }
@@ -345,10 +346,12 @@
     text-align: center;
     text-decoration: none;
     color: @text-primary;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     
     &:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }
     
     .entry-icon {
@@ -384,11 +387,14 @@
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     
     h2 {
       font-size: 32px;
       font-weight: 800;
       margin-bottom: 25px;
+      color: @text-primary;
     }
     
     p {
@@ -406,7 +412,7 @@
       margin-bottom: 25px;
       
       .chip {
-        background: rgba(67, 84, 255, 0.1);
+        background: rgba(30, 144, 255, 0.1);
         color: @primary-color;
         padding: 8px 16px;
         border-radius: 30px;
@@ -425,9 +431,10 @@
 }
 
 .simple-footer {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.8);
   padding: 20px 0;
   text-align: center;
+  border-top: 1px solid @border-color;
   
   p {
     color: @text-tertiary;
