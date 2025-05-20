@@ -113,6 +113,7 @@
 
 .home-page {
   padding-bottom: 0;
+  background-color: @background-color;
 }
 
 .hero-section {
@@ -156,6 +157,7 @@
     margin-bottom: 24px;
     line-height: 1.1;
     color: @text-primary;
+    letter-spacing: -1px;
     
     @media (max-width: 768px) {
       font-size: 48px;
@@ -191,6 +193,12 @@
       font-size: 18px;
       font-weight: 600;
       border-radius: @border-radius-base;
+      box-shadow: 0 4px 15px rgba(0, 132, 255, 0.25);
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 132, 255, 0.35);
+      }
     }
   }
 }
@@ -209,7 +217,7 @@
     height: 150px;
     background: radial-gradient(circle at 30% 30%, @primary-color, darken(@primary-color, 20%));
     border-radius: 50%;
-    box-shadow: 0 0 60px rgba(67, 84, 255, 0.5);
+    box-shadow: 0 0 60px rgba(0, 132, 255, 0.5);
   }
   
   .orbit {
@@ -346,12 +354,16 @@
     text-align: center;
     text-decoration: none;
     color: @text-primary;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    background: @glass-background;
+    backdrop-filter: @glass-backdrop-filter;
+    -webkit-backdrop-filter: @glass-backdrop-filter;
+    box-shadow: @glass-shadow;
+    border: @glass-border;
+    border-radius: @border-radius-base;
     
     &:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     }
     
     .entry-icon {
@@ -364,11 +376,14 @@
       margin-bottom: 20px;
       font-size: 32px;
       color: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
     
     h3 {
       font-size: 20px;
       margin-bottom: 15px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
     }
     
     p {
@@ -387,14 +402,19 @@
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    background: @glass-background;
+    backdrop-filter: @glass-backdrop-filter;
+    -webkit-backdrop-filter: @glass-backdrop-filter;
+    box-shadow: @glass-shadow;
+    border: @glass-border;
+    border-radius: @border-radius-base;
     
     h2 {
       font-size: 32px;
       font-weight: 800;
       margin-bottom: 25px;
       color: @text-primary;
+      letter-spacing: -0.5px;
     }
     
     p {
@@ -412,11 +432,12 @@
       margin-bottom: 25px;
       
       .chip {
-        background: rgba(30, 144, 255, 0.1);
+        background: rgba(0, 132, 255, 0.1);
         color: @primary-color;
         padding: 8px 16px;
         border-radius: 30px;
         font-weight: 600;
+        border: 1px solid rgba(0, 132, 255, 0.15);
       }
     }
     
@@ -425,16 +446,25 @@
         padding: 12px 30px;
         font-size: 16px;
         font-weight: 600;
+        border-radius: @border-radius-base;
+        box-shadow: 0 4px 15px rgba(0, 132, 255, 0.2);
+        
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0, 132, 255, 0.3);
+        }
       }
     }
   }
 }
 
 .simple-footer {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: @glass-backdrop-filter;
+  -webkit-backdrop-filter: @glass-backdrop-filter;
   padding: 20px 0;
   text-align: center;
-  border-top: 1px solid @border-color;
+  border-top: @glass-border;
   
   p {
     color: @text-tertiary;

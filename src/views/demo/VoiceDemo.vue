@@ -283,9 +283,13 @@ watch(transcription, () => {
 
 // 课堂场景容器
 .scene-container {
-  background: rgba(255, 255, 255, 0.9);
+  background: @glass-background;
   position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: @glass-shadow;
+  backdrop-filter: @glass-backdrop-filter;
+  -webkit-backdrop-filter: @glass-backdrop-filter;
+  border: @glass-border;
+  border-radius: @border-radius-base;
   
   .scene-header {
     padding: 20px;
@@ -295,11 +299,11 @@ watch(transcription, () => {
     gap: 15px;
     
     .badge {
-      background: rgba(30, 144, 255, 0.15);
+      background: rgba(0, 132, 255, 0.12);
       color: @primary-color;
       font-size: 12px;
       font-weight: 600;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 20px;
     }
     
@@ -307,6 +311,7 @@ watch(transcription, () => {
       font-weight: 600;
       font-size: 18px;
       color: @text-primary;
+      letter-spacing: -0.3px;
     }
   }
 }
@@ -419,6 +424,8 @@ watch(transcription, () => {
       
       .title {
         font-weight: 600;
+        color: @text-primary;
+        letter-spacing: -0.3px;
       }
       
       .controls {
@@ -426,24 +433,39 @@ watch(transcription, () => {
         gap: 10px;
         
         .control-btn {
-          padding: 6px 12px;
-          border-radius: 6px;
+          padding: 8px 12px;
+          border-radius: @border-radius-base;
           font-size: 14px;
           cursor: pointer;
           transition: all 0.3s;
           background: @primary-color;
           color: white;
           border: none;
+          box-shadow: 0 2px 8px rgba(0, 132, 255, 0.25);
           
           &.outline {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             color: @text-secondary;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            
+            &:hover {
+              background: rgba(255, 255, 255, 0.8);
+              color: @text-primary;
+              transform: translateY(-1px);
+            }
           }
           
           &.recording {
             background: @error-color;
             position: relative;
+            box-shadow: 0 2px 8px rgba(244, 67, 54, 0.25);
+            
+            &:hover {
+              background: lighten(@error-color, 5%);
+              transform: translateY(-1px);
+              box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+            }
             
             &::before {
               content: '';
@@ -460,6 +482,12 @@ watch(transcription, () => {
             
             padding-left: 22px;
           }
+          
+          &:hover:not(.recording) {
+            background: lighten(@primary-color, 5%);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 132, 255, 0.3);
+          }
         }
       }
     }
@@ -468,12 +496,13 @@ watch(transcription, () => {
 
 // 转写区域
 .transcription-area {
-  background: rgba(0, 0, 0, 0.03);
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: @border-radius-base;
   padding: 15px;
   height: 300px;
   overflow-y: auto;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
   
   .transcription-content {
     p {
@@ -594,9 +623,13 @@ watch(transcription, () => {
 
 // AI分析面板
 .analysis-panel {
-  background: rgba(255, 255, 255, 0.9);
+  background: @glass-background;
   animation: slide-up 0.5s;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: @glass-shadow;
+  backdrop-filter: @glass-backdrop-filter;
+  -webkit-backdrop-filter: @glass-backdrop-filter;
+  border: @glass-border;
+  border-radius: @border-radius-base;
   
   .panel-header {
     padding: 15px 20px;
@@ -611,6 +644,7 @@ watch(transcription, () => {
       gap: 10px;
       font-weight: 600;
       color: @text-primary;
+      letter-spacing: -0.3px;
       
       i {
         color: @secondary-color;
@@ -618,19 +652,21 @@ watch(transcription, () => {
     }
     
     .refresh-btn {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
-      background: rgba(0, 0, 0, 0.05);
+      background: rgba(255, 255, 255, 0.5);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       transition: all 0.3s;
+      border: 1px solid rgba(0, 0, 0, 0.03);
       
       &:hover {
-        background: rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.8);
         transform: rotate(45deg);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       }
     }
   }
@@ -662,11 +698,12 @@ watch(transcription, () => {
   gap: 10px;
   
   .chip {
-    background: rgba(30, 144, 255, 0.1);
+    background: rgba(0, 132, 255, 0.1);
     color: @primary-color;
-    padding: 6px 12px;
+    padding: 6px 14px;
     border-radius: 20px;
     font-size: 14px;
+    border: 1px solid rgba(0, 132, 255, 0.15);
   }
 }
 

@@ -481,8 +481,12 @@ const clearHighlight = () => {
 
 // 场景容器样式
 .scene-container {
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  background: @glass-background;
+  backdrop-filter: @glass-backdrop-filter;
+  -webkit-backdrop-filter: @glass-backdrop-filter;
+  box-shadow: @glass-shadow;
+  border: @glass-border;
+  border-radius: @border-radius-base;
   
   .scene-header {
     padding: 20px;
@@ -492,11 +496,11 @@ const clearHighlight = () => {
     gap: 15px;
     
     .badge {
-      background: rgba(0, 188, 212, 0.15);
+      background: rgba(0, 184, 212, 0.12);
       color: @secondary-color;
       font-size: 12px;
       font-weight: 600;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 20px;
     }
     
@@ -504,6 +508,7 @@ const clearHighlight = () => {
       font-weight: 600;
       font-size: 18px;
       color: @text-primary;
+      letter-spacing: -0.3px;
     }
   }
 }
@@ -620,11 +625,12 @@ const clearHighlight = () => {
   
   .image-container {
     position: relative;
-    border-radius: 8px;
+    border-radius: @border-radius-base;
     overflow: hidden;
     min-height: 200px;
-    background: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
     
     img {
       width: 100%;
@@ -665,7 +671,7 @@ const clearHighlight = () => {
     
     .control-btn {
       padding: 8px 16px;
-      border-radius: 6px;
+      border-radius: @border-radius-base;
       font-size: 14px;
       cursor: pointer;
       transition: all 0.3s;
@@ -673,9 +679,12 @@ const clearHighlight = () => {
       color: white;
       border: none;
       flex: 1;
+      box-shadow: 0 2px 8px rgba(0, 132, 255, 0.25);
       
       &:hover:not(:disabled) {
         background: lighten(@primary-color, 5%);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 132, 255, 0.3);
       }
       
       &:disabled {
@@ -684,13 +693,15 @@ const clearHighlight = () => {
       }
       
       &.outline {
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.05);
         color: @text-secondary;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
         
         &:hover {
-          border-color: rgba(255, 255, 255, 0.2);
-          color: white;
+          border-color: rgba(0, 0, 0, 0.1);
+          color: @text-primary;
+          background: rgba(255, 255, 255, 0.8);
         }
       }
     }
@@ -781,11 +792,12 @@ const clearHighlight = () => {
   .results-content {
     flex: 1;
     overflow-y: auto;
-    background: rgba(0, 0, 0, 0.03);
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: @border-radius-base;
     padding: 15px;
     height: 300px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
     
     .results-loading, .results-placeholder {
       height: 100%;
@@ -938,9 +950,13 @@ const clearHighlight = () => {
 
 // AI 洞见面板
 .insights-panel {
-  background: rgba(255, 255, 255, 0.9);
+  background: @glass-background;
   animation: slide-up 0.5s;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: @glass-shadow;
+  backdrop-filter: @glass-backdrop-filter;
+  -webkit-backdrop-filter: @glass-backdrop-filter;
+  border: @glass-border;
+  border-radius: @border-radius-base;
   
   .panel-header {
     padding: 15px 20px;
