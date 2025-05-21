@@ -80,17 +80,15 @@ const demoModules = [
 
 // 导航栏样式
 .demo-nav {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: @glass-backdrop-filter;
-  -webkit-backdrop-filter: @glass-backdrop-filter;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 12px 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  border-bottom: @glass-border;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   
   .container {
     display: flex;
@@ -107,29 +105,27 @@ const demoModules = [
     .logo-icon {
       width: 32px;
       height: 32px;
-      border-radius: 10px;
+      border-radius: 8px;
       background: linear-gradient(135deg, @primary-color, @secondary-color);
-      box-shadow: 0 2px 8px rgba(0, 132, 255, 0.3);
     }
     
     span {
       font-weight: 600;
       font-size: 16px;
       color: @text-primary;
-      letter-spacing: -0.3px;
     }
   }
   
   .nav-tabs {
     display: flex;
-    gap: 8px;
+    gap: 5px;
     
     .nav-tab {
       display: flex;
       align-items: center;
       gap: 6px;
       padding: 8px 16px;
-      border-radius: 12px;
+      border-radius: 8px;
       color: @text-secondary;
       text-decoration: none;
       transition: all @transition-base;
@@ -139,16 +135,13 @@ const demoModules = [
       }
       
       &:hover {
-        background: rgba(255, 255, 255, 0.6);
+        background: rgba(0, 0, 0, 0.05);
         color: @text-primary;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       }
       
       &.active {
-        background: rgba(0, 132, 255, 0.12);
+        background: rgba(30, 144, 255, 0.15);
         color: @primary-color;
-        box-shadow: 0 2px 8px rgba(0, 132, 255, 0.15);
-        font-weight: 500;
       }
     }
   }
@@ -157,18 +150,16 @@ const demoModules = [
 // 主内容区样式
 .demo-content {
   flex: 1;
-  margin-top: 85px;
+  margin-top: 80px;
   padding: 20px 0 40px;
 }
 
 // 底部样式
 .demo-footer {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: @glass-backdrop-filter;
-  -webkit-backdrop-filter: @glass-backdrop-filter;
+  background: rgba(255, 255, 255, 0.8);
   padding: 15px 0;
   text-align: center;
-  border-top: @glass-border;
+  border-top: 1px solid @border-color;
   
   p {
     font-size: 14px;
